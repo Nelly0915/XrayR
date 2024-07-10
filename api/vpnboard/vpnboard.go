@@ -152,6 +152,8 @@ func (c *APIClient) GetNodeInfo() (nodeInfo *api.NodeInfo, err error) {
 		return nil, fmt.Errorf("parse node info failed: %s, \nError: %s", string(res), err)
 	}
 
+	c.NodeType = nodeInfo.NodeType
+
 	return nodeInfo, nil
 }
 
